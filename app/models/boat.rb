@@ -28,9 +28,9 @@ class Boat < ActiveRecord::Base
   end
 
   def self.with_three_classifications
-     This is really complex! It's not common to write code like this
-     regularly. Just know that we can get this out of the database in
-     milliseconds whereas it would take whole seconds for Ruby to do the same.
+    # This is really complex! It's not common to write code like this
+     # regularly. Just know that we can get this out of the database in
+     # milliseconds whereas it would take whole seconds for Ruby to do the same.
     
      joins(:classifications).group("boats.id").having("COUNT(*) = 3").select("boats.*")
   end
